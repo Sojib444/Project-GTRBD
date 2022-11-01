@@ -9,7 +9,10 @@ namespace Web_Api_Infrastructure.Service
 {
     public interface IRegionService
     {
-        public void Add(Region region);
-        public IEnumerable<Region> GetAll();
+        Region Add(Region region);
+        IEnumerable<Region> GetAll();
+        Region GetById( Guid Id);
+        Region Delete(Guid Id);
+        Region Update(Guid Id, Region region);
     }
 }

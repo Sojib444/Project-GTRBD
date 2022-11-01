@@ -8,7 +8,12 @@ namespace Web_Api_Infrastructure.GenericRepository
 {
     public interface IRepository<T>
     {
-        public IEnumerable<T> GetAll();
-        public void Add(T item);
+        IEnumerable<T> GetAll();
+        void Add(T item);
+        T Get(Guid id);
+
+        T Delete(Guid id);
+        T Update(Guid id,T item);
+        
     }
 }

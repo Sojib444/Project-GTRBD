@@ -17,7 +17,7 @@ namespace Web_Api_Infrastructure.UniofWork
         }
         public void Dispose()
         {
-            dbContext.SaveChanges();
+            dbContext.Dispose();
         }
 
         public void Saves()

@@ -8,7 +8,6 @@ using Web_Api_Infrastructure.Repository;
 namespace Web_Api_Infrastructure.Service
 {
     public class WalkDifficultyService:IWalkDifficultyService
-
     {
 
     }

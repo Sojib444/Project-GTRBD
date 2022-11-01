@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +22,35 @@ namespace Web_Api_Infrastructure.GenericRepository
         }
         public virtual void Add(T item)
         {
-            throw new NotImplementedException();
+            _set.Add(item);
+           
+            
+        }
+
+        public T Delete(Guid id)
+        {
+            var result=_set.Find(id);
+            if(result!=null)
+            {
+                applicationDbContext.Remove(result);
+            }
+            return result;
+        }
+
+        public T Get(Guid id)
+        {
+            return _set.Find(id);
         }
 
         public  virtual IEnumerable<T> GetAll()
         {
            return  _set.ToList();
+        }
+
+        public T Update(Guid id, T item)
+        {
+            var result=_set.Find(id);
+            return result;
         }
     }
 }
